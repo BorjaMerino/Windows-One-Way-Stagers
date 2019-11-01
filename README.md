@@ -26,6 +26,9 @@ The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK str
 * **Win32 One-Way Shellcode (Black-Hat Asia, 2003)**
 <br />https://www.blackhat.com/presentations/bh-asia-03/bh-asia-03-chong.pdf
 
+* **Shellcode Penetrate Firewall (X'CON, 2004)**
+<br />http://xcon.xfocus.org/XCon2004/archives/01_Shellcode%20Penetrate%20Firewall%20_BY_SAN.pdf
+
 * **Advances in Windows Shellcode (Phrack 62, 2004)**
 <br />http://phrack.org/issues/62/7.html
 
