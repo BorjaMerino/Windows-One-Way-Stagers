@@ -14,14 +14,14 @@ The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK str
 https://cybersecpolitics.blogspot.com/2018/04/stealing-socket-for-policy-and-profit.html
 
 # Presentations / Talks / Papers
-* ** Macro-Reliability in Win32 Exploits (Black-Hat Europe, 2007)**
+* **Macro-Reliability in Win32 Exploits (Black-Hat Europe, 2007)**
 https://www.blackhat.com/presentations/bh-europe-07/Kortchinsky/Presentation/bh-eu-07-kortchinsky.pdf
 
-* ** Advances in Windows Shellcode (Phrack 62, 2004)**
+* **Advances in Windows Shellcode (Phrack 62, 2004)**
 http://phrack.org/issues/62/7.html
 
-* ** Win32 Assembly Components (LSD-PL, 2002)**
+* **Win32 Assembly Components (LSD-PL, 2002)**
 https://web.archive.org/web/20161107193740/http://www.lsd-pl.net/winasm-slides.pdf
 
-* ** Win32 One-Way Shellcode (Black-Hat Asia, 2003)**
+* **Win32 One-Way Shellcode (Black-Hat Asia, 2003)**
 https://www.blackhat.com/presentations/bh-asia-03/bh-asia-03-chong.pdf
