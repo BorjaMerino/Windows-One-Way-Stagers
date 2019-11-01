@@ -7,12 +7,15 @@ Shellcodes for Windows that allow to reuse/rebind sockets. This is really useful
 * **One-Way shellcode using Out Of Band data:** it sends Out-of-Band data (just one byte is needed) in some packet/packets just before the Stager starts to run. To find the handle the Stager would only need to bruteforce the list of posible sockets looking for the one with OOB pending to be read (by using recv with the MSG_OOB flag). NAT inmmune. More information:
 <br />https://www.shelliscoming.com/2019/03/one-way-shellcode-for-firewall-evasion.html
 
+* **Rebind socket + Ip-Knock bind shell:**
+Rebind the port by clonning the vulnerable process (PEB->PRTL_USER_PROCESS_PARAMETER) and then inyecting a IP-Knock bind shell with a Sleep() to give the main process time to close all its handles. More information: 
+
 * **Findsock (51 bytes, harcoded IAT for recv)**
-Remote exploit developed by HD Moore in Veritas Backup software. Due to the space restrictions to execute code (about 50 bytes), the payload gets the recv() address from the IAT and use it to stage the rest of the payload. 
+Remote exploit developed by HD Moore in Veritas Backup software. Due to the space restrictions to execute code (about 50 bytes), the payload gets the recv() address from the IAT and use it to stage the rest of the payload. More information: 
 <br />https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/backupexec/name_service.rb
 
 * **Stealing the socket on IIS by using the built in ISAPI handler calls**
-The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK structure (used by IIS and the ISAPI extension to exchange information) and from there steal the client socket.
+The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK structure (used by IIS and the ISAPI extension to exchange information) and from there steal the client socket. More information: 
 <br />https://cybersecpolitics.blogspot.com/2018/04/stealing-socket-for-policy-and-profit.html
 
 # Presentations / Talks / Papers
