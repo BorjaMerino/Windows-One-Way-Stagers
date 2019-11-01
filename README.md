@@ -9,6 +9,7 @@ Shellcodes for Windows that allow to reuse/rebind sockets. This is really useful
 
 * **Rebind socket + Ip-Knock bind shell:**
 Rebind the port by clonning the vulnerable process (PEB->PRTL_USER_PROCESS_PARAMETER) and then inyecting a IP-Knock bind shell with a Sleep() to give the main process time to close all its handles. More information: 
+<br />https://www.shelliscoming.com/2019/11/retro-shellcoding-for-current-threats.html
 
 * **Findsock (51 bytes, harcoded IAT for recv)**
 Remote exploit developed by HD Moore in Veritas Backup software. Due to the space restrictions to execute code (about 50 bytes), the payload gets the recv() address from the IAT and use it to stage the rest of the payload. More information: 
