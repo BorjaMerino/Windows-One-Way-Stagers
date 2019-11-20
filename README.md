@@ -35,3 +35,8 @@ The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK str
 
 * **Macro-Reliability in Win32 Exploits (Black-Hat Europe, 2007)**
 <br />https://www.blackhat.com/presentations/bh-europe-07/Kortchinsky/Presentation/bh-eu-07-kortchinsky.pdf
+
+* **Challenges and Solutions of Window Remote Shellcode**
+<br />https://es.slideshare.net/aj0612/challenges-and-solutions-of-window-remote-shellcode
+
+
