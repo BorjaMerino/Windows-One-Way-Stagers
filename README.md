@@ -39,4 +39,5 @@ The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK str
 * **Challenges and Solutions of Window Remote Shellcode (2017)**
 <br />https://es.slideshare.net/aj0612/challenges-and-solutions-of-window-remote-shellcode
 
-
+* **Remote Code Execution in restricted Windows environments (Jornadas STIC CCN-CERT 2019)**
+<br />https://github.com/BorjaMerino/Windows-One-Way-Stagers/blob/master/Jornadas%20STIC%20CCN-CERT%202019/Remote%20Code%20Execution%20in%20restricted%20Windows%20environments.pptx?raw=true
