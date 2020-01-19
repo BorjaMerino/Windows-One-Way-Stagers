@@ -11,11 +11,11 @@ Shellcodes for Windows that allow to reuse/rebind sockets. This is really useful
 Rebind the port by clonning the vulnerable process (PEB->PRTL_USER_PROCESS_PARAMETER) and then inyecting a IP-Knock bind shell with a Sleep() to give the main process time to close all its handles. More information: 
 <br />https://www.shelliscoming.com/2019/11/retro-shellcoding-for-current-threats.html
 
-* **Findsock (51 bytes, harcoded IAT for recv)**
+* **Findsock (51 bytes, harcoded IAT for recv):**
 Remote exploit developed by HD Moore in Veritas Backup software. Due to the space restrictions to execute code (about 50 bytes), the payload gets the recv() address from the IAT and use it to stage the rest of the payload. More information: 
 <br />https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/backupexec/name_service.rb
 
-* **Stealing the socket on IIS by using the built in ISAPI handler calls**
+* **Stealing the socket on IIS by using the built in ISAPI handler calls:**
 The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK structure (used by IIS and the ISAPI extension to exchange information) and from there steal the client socket. More information: 
 <br />https://cybersecpolitics.blogspot.com/2018/04/stealing-socket-for-policy-and-profit.html
 
@@ -41,3 +41,14 @@ The shellcode walks up the stack looking for a valid EXTENSION_CONTROL_BLOCK str
 
 * **Remote Code Execution in restricted Windows environments (Jornadas STIC CCN-CERT 2019)**
 <br />https://github.com/BorjaMerino/Windows-One-Way-Stagers/raw/master/Jornadas%20STIC%20CCN-CERT%202019/Remote%20Code%20Execution%20in%20restricted%20Windows%20environments.pdf
+
+# Related resources
+
+* **ShadowMove: A Stealthy Lateral Movement Strategy:**
+Tool that uses a novel technique to secretly duplicate sockets owned by legitimate clients and injects commands through such stolen
+sockets
+<br />https://www.usenix.org/system/files/sec20summer_niakanlahiji_prepub.pdf
+
+* **CVE-2012-0148: A Deep Dive Into AFD:**
+Good explanation about the internals of AFD (The Ancillary Function Driver)
+<br />http://mista.nu/blog/?p=655
