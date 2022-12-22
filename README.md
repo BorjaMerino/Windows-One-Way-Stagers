@@ -52,3 +52,7 @@ sockets
 * **CVE-2012-0148: A Deep Dive Into AFD:**
 Good explanation about the internals of AFD (The Ancillary Function Driver)
 <br />http://mista.nu/blog/?p=655
+
+* **Venom**
+Stealing sockets (WSADuplicateSocket) from Edge process to perform the network operations
+<br />https://github.com/Idov31/Venom
