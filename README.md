@@ -56,3 +56,7 @@ Good explanation about the internals of AFD (The Ancillary Function Driver)
 * **Venom**
 Stealing sockets (WSADuplicateSocket) from Edge process to perform the network operations
 <br />https://github.com/Idov31/Venom
+
+* **Reverse Engineering Windows AFD sys:**
+AFD.sys handles socket calls and other network communication and is accessible to many applications, making it an interesting target. The document outlines goals of strengthening application sandboxes and increasing attacker costs
+<br />https://www.youtube.com/watch?v=z0wQvGiB__0
