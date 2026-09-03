@@ -60,3 +60,7 @@ Stealing sockets (WSADuplicateSocket) from Edge process to perform the network o
 * **Reverse Engineering Windows AFD sys:**
 AFD.sys handles socket calls and other network communication and is accessible to many applications, making it an interesting target. The document outlines goals of strengthening application sandboxes and increasing attacker costs
 <br />https://www.youtube.com/watch?v=z0wQvGiB__0
+
+* **Improving AFD Socket Visibility for Windows Forensics & Troubleshooting**
+While Winsock is well-documented, the AFD API is not. The authors reverse-engineered it, published modern definitions in the PHNT headers (ntafd.h), and added full socket inspection support to System Informer.
+<br />https://www.huntandhackett.com/blog/improving_afd_socket_visibility
